@@ -12,7 +12,7 @@ LABEL \
 
 
 ENV \
-    STI_SCRIPTS_PATH=/usr/libexec/s2i
+    STI_SCRIPTS_PATH=/usr/libexec/s2i \
     HOME=/opt/app-root/src
 
 RUN dnf install -y httpd ; dnf clean all
