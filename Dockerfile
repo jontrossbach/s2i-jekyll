@@ -15,10 +15,9 @@ ENV \
     STI_SCRIPTS_PATH=/usr/libexec/s2i \
     HOME=/opt/app-root/src \
     PATH=/opt/app-root/src/bin:/opt/app-root/bin:$PATH
-RUN mkdir -p /opt/app-root
+RUN mkdir -p /opt/app-root/src
 RUN useradd -u 1001 -r -g 0 -d ${HOME} -s /sbin/nologin -c "Default Application User" default 
 RUN chown -R 1001:0 /opt/app-root
-
 RUN dnf install -y tar bsdtar shadow-utils ; dnf clean all
 RUN dnf install -y httpd ; dnf clean all
 RUN dnf install -y rubygem-bundler ruby-devel curl-devel git make gcc gcc-c++ zlib-devel patch ImageMagick redhat-rpm-config ; dnf clean all
