@@ -1,0 +1,13 @@
+#!/bin/sh
+
+cat <<EOF
+This is a S2I middleman Fedora 23 base image:
+To use it, install S2I: https://github.com/openshift/source-to-image
+
+Sample invocation:
+
+s2i build https://github.com/OSAS/community-website osas/sti-middleman_f23 middleman-community-site
+
+You can then run the resulting image via:
+docker run -p 8080:8080 middleman-community-site
+EOF
