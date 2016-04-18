@@ -15,6 +15,7 @@ ENV \
     STI_SCRIPTS_PATH=/usr/libexec/s2i \
     HOME=/opt/app-root/src
 
+RUN dnf install -y tar ; dnf clean all
 RUN dnf install -y httpd ; dnf clean all
 RUN dnf install -y rubygem-bundler ruby-devel curl-devel git make gcc gcc-c++ zlib-devel patch ImageMagick redhat-rpm-config ; dnf clean all
 # copy 
