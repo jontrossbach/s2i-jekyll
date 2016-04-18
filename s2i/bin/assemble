@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x 
 echo "---> Installing application source ..."
 cp -Rf /tmp/src/. ./
 
@@ -6,7 +7,7 @@ echo "---> Install needed gems ..."
 bundle install
 
 echo "---> Build the website ..."
-bundle exec middleman build
+bundle exec middleman build --verbose
 
 echo "---> Copy the website ..."
 cp -Rf build /var/www/html
