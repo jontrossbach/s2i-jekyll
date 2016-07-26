@@ -1,10 +1,13 @@
 #!/bin/bash
-set -x 
+set -e
+
 echo "---> Installing application source ..."
 cp -Rf /tmp/src/. ./
 
+git init 
+git submodule init && git submodule update
 echo "---> Install needed gems ..."
-bundle install
+bundle install --no-color --verbose
 
 echo "---> Build the website ..."
 bundle exec middleman build --verbose
