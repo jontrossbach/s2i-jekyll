@@ -2,12 +2,13 @@
 set -e
 
 echo "---> Installing application source ..."
-cp -Rf /tmp/src/. ./
+mkdir src
+cp -Rf /tmp/src/. ./src/
 
-git init 
+cd src
 git submodule init && git submodule update
 echo "---> Install needed gems ..."
-bundle install --no-color --verbose
+bundle install --no-color
 
 echo "---> Build the website ..."
 bundle exec middleman build --verbose
