@@ -10,4 +10,4 @@ echo "---> Build the website ..."
 bundle exec middleman build --verbose
 
 echo "---> Copy the website ..."
-cp -Rf build /var/www/html
+cp -Rf build /opt/app-root/build
