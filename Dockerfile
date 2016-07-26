@@ -1,4 +1,4 @@
-FROM fedora:23
+FROM fedora:24
 
 MAINTAINER Michael Scherer <mscherer@redhat.com>
 
@@ -6,7 +6,7 @@ LABEL \
       # Location of the STI scripts inside the image.
       io.openshift.s2i.scripts-url=image:///usr/libexec/s2i \
       io.k8s.description="Platform for building and running Middleman website" \
-      io.k8s.display-name="Middleman, Fedora 23" \
+      io.k8s.display-name="Middleman, Fedora 24" \
       io.openshift.expose-services="8080:http" \
       io.openshift.tags="builder,middleman"
 
