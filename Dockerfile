@@ -23,7 +23,7 @@ RUN dnf install -y tar bsdtar shadow-utils ; dnf clean all
 
 RUN dnf install -y nginx ; dnf clean all
 RUN /usr/bin/chmod -R 770 /var/{lib,log}/nginx/ && chown -R :root /var/{lib,log}/nginx/
-COPY /bin/cp ./s2i/nginx.conf  /etc/nginx/nginx.conf
+COPY /usr/bin/cp ./s2i/nginx.conf  /etc/nginx/nginx.conf
 
 RUN dnf install -y rubygem-bundler ruby-devel curl-devel git make gcc gcc-c++ zlib-devel patch ImageMagick redhat-rpm-config ; dnf clean all
  
