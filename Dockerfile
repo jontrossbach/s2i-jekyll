@@ -1,4 +1,4 @@
-FROM fedora:24
+FROM fedora:26
 
 MAINTAINER Michael Scherer <mscherer@redhat.com>
 
