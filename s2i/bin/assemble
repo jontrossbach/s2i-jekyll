@@ -5,6 +5,9 @@ echo "---> Installing application source ..."
 mkdir src
 cp -Rf /tmp/src/. ./src/
 
+# don't use embedded libraries to build Nokogiri
+export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
+
 cd src
 git submodule init && git submodule update
 echo "---> Install needed gems ..."
