@@ -37,4 +37,4 @@ USER 1001
 
 EXPOSE 8080
 # Set the default CMD to print the usage of the language image
-#CMD $STI_SCRIPTS_PATH/usage
+CMD $STI_SCRIPTS_PATH/usage
