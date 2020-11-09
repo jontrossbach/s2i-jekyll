@@ -15,6 +15,7 @@ bundle install --no-color
 
 echo "---> Build the website ..."
 bundle exec jekyll build --verbose
+#bundle exec jekyll serve
 
 echo "---> Copy the website ..."
 cp -Rf build /opt/app-root/build

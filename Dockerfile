@@ -27,8 +27,8 @@ RUN /usr/bin/chmod -R 770 /var/{lib,log}/nginx/ && chown -R :root /var/{lib,log}
 COPY ./s2i/nginx.conf  /etc/nginx/nginx.conf
 
 RUN dnf install -y rubygem-bundler ruby-devel curl-devel git make gcc gcc-c++ zlib-devel patch ImageMagick redhat-rpm-config libxml2-devel libxslt-devel ; dnf clean all
-RUN dnf install -y ruby-devel
-RUN gem install jekyll
+RUN dnf install -y ruby-devel rubygems
+RUN gem install jekyll #concurrent-ruby
 
 COPY ./s2i/bin/ $STI_SCRIPTS_PATH
 WORKDIR ${HOME}
