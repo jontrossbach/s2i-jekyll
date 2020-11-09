@@ -14,7 +14,7 @@ echo "---> Install needed gems ..."
 bundle install --no-color
 
 echo "---> Build the website ..."
-bundle exec middleman build --verbose
+bundle exec jekyll build --verbose
 
 echo "---> Copy the website ..."
 cp -Rf build /opt/app-root/build
