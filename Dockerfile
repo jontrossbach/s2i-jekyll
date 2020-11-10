@@ -17,7 +17,7 @@ ENV \
     HOME=/opt/app-root/src \
     GEM_HOME=${HOME}/.rvm/gems/ruby \
     GEM_PATH=${HOME}/.rvm/gems/ruby:${HOME}/.rvm/gems/ruby@global \
-    PATH=${GEM_PATH}:/opt/app-root/src/bin:/opt/app-root/bin:$PATH
+    PATH=${GEM_HOME}:/opt/app-root/src/bin:/opt/app-root/bin:$PATH
 
 RUN mkdir -p /opt/app-root/src
 RUN useradd -u 1001 -r -g 0 -d ${HOME} -s /sbin/nologin -c "Default Application User" default 
