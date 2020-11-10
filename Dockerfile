@@ -15,8 +15,8 @@ LABEL \
 ENV \
     STI_SCRIPTS_PATH=/usr/libexec/s2i \
     HOME=/opt/app-root/src \
-    #GEM_HOME=${HOME}/.rvm/gems/ruby \
-    #GEM_PATH=${HOME}/.rvm/gems/ruby:${HOME}/.rvm/gems/ruby@global \
+    GEM_HOME=${HOME}/.rvm/gems/ruby \
+    GEM_PATH=${HOME}/.rvm/gems/ruby:${HOME}/.rvm/gems/ruby@global \
     PATH=/opt/app-root/src/bin:/opt/app-root/bin:$PATH
 
 RUN mkdir -p /opt/app-root/src
