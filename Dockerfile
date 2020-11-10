@@ -4,6 +4,7 @@ MAINTAINER Michael Scherer <mscherer@redhat.com>
 
 LABEL \
       # Location of the S2I scripts inside the image.
+      io.openshift.s2i.assemble-user=root \
       io.openshift.s2i.scripts-url=image:///usr/libexec/s2i \
       io.k8s.description="Platform for building and running Jekyll website" \
       io.k8s.display-name="Jekyll, Fedora 32" \
