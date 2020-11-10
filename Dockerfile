@@ -4,7 +4,7 @@ MAINTAINER Michael Scherer <mscherer@redhat.com>
 
 LABEL \
       # Location of the S2I scripts inside the image.
-      io.openshift.s2i.assemble-user=0 \
+      #io.openshift.s2i.assemble-user=0 \ #s2i assemble script is not allowed to use root per "Deploying to OpenShift By Graham Dumpleton"
       io.openshift.s2i.scripts-url=image:///usr/libexec/s2i \
       io.k8s.description="Platform for building and running Jekyll website" \
       io.k8s.display-name="Jekyll, Fedora 32" \
@@ -29,7 +29,7 @@ COPY ./s2i/nginx.conf  /etc/nginx/nginx.conf
 
 RUN dnf install -y rubygem-bundler ruby-devel curl-devel git make gcc gcc-c++ zlib-devel patch ImageMagick redhat-rpm-config libxml2-devel libxslt-devel ; dnf clean all
 RUN dnf install -y ruby-devel rubygems
-RUN gem install jekyll concurrent-ruby
+RUN gem install jekyll concurrent-ruby jekyll-sass-converter kramdown liquid jemoji jekyll-redirect-from jekyll-sitemap jekyll-paginate jekyll-coffeescript jekyll-seo-tag listen
 
 COPY ./s2i/bin/ $STI_SCRIPTS_PATH
 WORKDIR ${HOME}
