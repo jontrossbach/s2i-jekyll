@@ -29,7 +29,7 @@ COPY ./s2i/nginx.conf  /etc/nginx/nginx.conf
 
 RUN dnf install -y rubygem-bundler ruby-devel curl-devel git make gcc gcc-c++ zlib-devel patch ImageMagick redhat-rpm-config libxml2-devel libxslt-devel ; dnf clean all
 RUN dnf install -y ruby-devel rubygems
-RUN gem install jekyll concurrent-ruby jekyll-sass-converter kramdown liquid jemoji jekyll-redirect-from jekyll-sitemap jekyll-paginate jekyll-coffeescript jekyll-seo-tag listen
+#RUN gem install jekyll concurrent-ruby jekyll-sass-converter kramdown liquid jemoji jekyll-redirect-from jekyll-sitemap jekyll-paginate jekyll-coffeescript jekyll-seo-tag listen
 
 COPY ./s2i/bin/ $STI_SCRIPTS_PATH
 WORKDIR ${HOME}
