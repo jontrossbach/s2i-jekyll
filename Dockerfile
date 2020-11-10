@@ -23,7 +23,7 @@ RUN mkdir -p /opt/app-root/src
 RUN useradd -u 1001 -r -g 0 -d ${HOME} -s /sbin/nologin -c "Default Application User" default 
 RUN chown -R 1001:0 /opt/app-root
 RUN dnf install -y tar bsdtar shadow-utils ; dnf clean all
-RUN chmod -R 777 /usr/share /usr/bin
+RUN chmod -R 777 /usr/share /usr/bin /opt/app-root
 
 RUN dnf install -y nginx ; dnf clean all
 RUN /usr/bin/chmod -R 770 /var/{lib,log}/nginx/ && chown -R :root /var/{lib,log}/nginx/
