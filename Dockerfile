@@ -5,6 +5,7 @@ MAINTAINER Michael Scherer <mscherer@redhat.com>
 LABEL \
       # Location of the S2I scripts inside the image.
       #io.openshift.s2i.assemble-user=0 \ #s2i assemble script is not allowed to use root per "Deploying to OpenShift By Graham Dumpleton"
+      io.openshift.s2i.destination=/opt/app-root/src \
       io.openshift.s2i.scripts-url=image:///usr/libexec/s2i \
       io.k8s.description="Platform for building and running Jekyll website" \
       io.k8s.display-name="Jekyll, Fedora 32" \
