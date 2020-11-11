@@ -8,6 +8,7 @@ cp -Rf /tmp/src/. ./src/
 # don't use embedded libraries to build Nokogiri
 export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 
+ls -l
 cd src
 git submodule init && git submodule update
 echo "---> Install needed gems ..."
