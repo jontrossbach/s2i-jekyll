@@ -1,4 +1,4 @@
-FROM centos:8
+FROM fedora:32
 
 MAINTAINER Michael Scherer <mscherer@redhat.com>
 
