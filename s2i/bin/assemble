@@ -2,7 +2,7 @@
 set -e
 
 echo "---> Installing application source ..."
-mkdir src
+#already exists#mkdir src
 cp -Rf /tmp/src/. ./src/
 
 # don't use embedded libraries to build Nokogiri
