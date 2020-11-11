@@ -15,8 +15,8 @@ LABEL \
 ENV \
     STI_SCRIPTS_PATH=/usr/libexec/s2i \
     HOME=/opt/app-root/src \
-    #GEM_HOME=${HOME}/.rvm/gems/ruby \
-    #GEM_PATH=${HOME}/.rvm/gems/ruby:${HOME}/.rvm/gems/ruby@global \
+    GEM_HOME=${HOME}/.rvm/gems/ruby \
+    :GEM_PATH=${HOME}/.rvm/gems/ruby:${HOME}/.rvm/gems/ruby@global \
     PATH=/opt/app-root/src/bin:/opt/app-root/bin:$PATH
 
 RUN mkdir -p /opt/app-root/src
@@ -32,7 +32,9 @@ COPY ./s2i/nginx.conf  /etc/nginx/nginx.conf
 RUN dnf install -y rubygem-bundler ruby-devel curl-devel git make gcc gcc-c++ zlib-devel patch ImageMagick redhat-rpm-config libxml2-devel libxslt-devel ; dnf clean all
 RUN dnf install -y ruby-devel rubygems
 RUN gem install bundler
-RUN bundle config set no-cache 'true'
+RUN bundle config set no-cache 'true' && \
+    bundle config set path '.'
+
 #RUN gem install jekyll concurrent-ruby jekyll-sass-converter kramdown liquid jemoji jekyll-redirect-from jekyll-sitemap jekyll-paginate jekyll-coffeescript jekyll-seo-tag listen
 
 COPY ./s2i/bin/ $STI_SCRIPTS_PATH
