@@ -33,7 +33,7 @@ RUN dnf install -y rubygem-bundler ruby-devel curl-devel git make gcc gcc-c++ zl
 RUN dnf install -y ruby-devel rubygems
 RUN gem install bundler
 RUN bundle config set no-cache 'true' && \
-    bundle config set path '.'
+    bundle config set path '${HOME}'
 
 #RUN gem install jekyll concurrent-ruby jekyll-sass-converter kramdown liquid jemoji jekyll-redirect-from jekyll-sitemap jekyll-paginate jekyll-coffeescript jekyll-seo-tag listen
 
