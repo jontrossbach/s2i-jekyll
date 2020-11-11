@@ -15,9 +15,9 @@ LABEL \
 ENV \
     STI_SCRIPTS_PATH=/usr/libexec/s2i \
     HOME=/opt/app-root/src \
-    GEM_HOME=${HOME}/.rvm/gems/ruby \
-    GEM_PATH=${HOME}/.rvm/gems/ruby:${HOME}/.rvm/gems/ruby@global \
-    PATH=${GEM_HOME}:/opt/app-root/src/bin:/opt/app-root/bin:$PATH
+    #GEM_HOME=${HOME}/.rvm/gems/ruby \
+    #GEM_PATH=${HOME}/.rvm/gems/ruby:${HOME}/.rvm/gems/ruby@global \
+    PATH=/opt/app-root/src/bin:/opt/app-root/bin:$PATH
 
 RUN mkdir -p /opt/app-root/src
 RUN useradd -u 1001 -r -g 0 -d ${HOME} -s /sbin/nologin -c "Default Application User" default 
@@ -42,4 +42,4 @@ USER 1001
 
 EXPOSE 8080
 # Set the default CMD to print the usage of the language image
-CMD $STI_SCRIPTS_PATH/usage
+#CMD $STI_SCRIPTS_PATH/usage
