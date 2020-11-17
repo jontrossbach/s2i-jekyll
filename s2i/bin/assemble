@@ -3,11 +3,12 @@ set -e
 
 echo "---> Installing application source ..."
 #already exists#mkdir src
-#this dir dne#cp -Rf /tmp/src/. ./src/
+#cp -Rf /tmp/src/. ./
 
 # don't use embedded libraries to build Nokogiri
 export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 
+pwd
 ls -l
 cd src
 git submodule init && git submodule update
