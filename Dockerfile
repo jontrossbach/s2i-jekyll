@@ -32,7 +32,7 @@ COPY ./s2i/nginx.conf  /etc/nginx/nginx.conf
 
 RUN dnf install -y rubygem-bundler ruby-devel curl-devel git make gcc gcc-c++ zlib-devel patch ImageMagick redhat-rpm-config libxml2-devel libxslt-devel ; dnf clean all
 RUN dnf install -y ruby-devel rubygems
-RUN gem install bundler
+#RUN gem install bundler
 RUN bundle config set no-cache 'true' && \
     bundle config set path '${HOME}'
 
