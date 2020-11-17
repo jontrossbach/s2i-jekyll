@@ -11,6 +11,7 @@ export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 pwd
 ls -l
 cd src
+cd src
 git submodule init && git submodule update
 echo "---> Install needed gems ..."
 bundle install --no-color
